@@ -1,0 +1,52 @@
+hostname = *.amemv.com,*.kuwo.cn,vip1.kuwo.cn,p.du.163.com,api.calm.com,www.calm.com,pool.elsanow.io,mobile-api.adguard.com,api.bilibili.com,app.bilibili.com,editorapi.115.com,*.bh3.com,api.diyidan.net,apimboom2.globaldelight.net,engbright.com,ulysses.app,sk.dayone.me,secure.istreamer.com,
+# 抖音去广告去水印 (By Choler)
+^https://.*\.amemv\.com/aweme/v2/feed/ url request-header ^GET /aweme/v2/feed/(.+) request-header GET /aweme/v1/feed/$1
+# 酷我音乐SVIP (By yxiaocai)
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?uid\=\d+ url 302 http://musicpay.kuwo.cn/music.pay?uid=1
+# tiktok封区解锁
+(.*video_id=\w{32})(.*watermark=)(.*) url 302 $1
+(?<=(carrier|account|sys)_region=)CN url 307 JP
+# 爱美剧Vip (by huihui）(官网：app.meiju2018.com)
+#ads
+^http(s)://mjapp.anlujia.com/index.php/app/ios/ads/index url reject-dict
+^http(s)://mjapp.anlujia.com/index.php/app/ios/ver/index_ios$ url reject
+^http(s)://mjapp.anlujia.com/index.php/app/ios/pay/ok$ url reject-dict
+# 网易蜗牛读书VIP (By yxiaocai and JO2EY)
+^https?://p\.du\.163\.com/readtime/info.json url reject
+#remove_manage
+^https:\/\/www\.calm\.com\/mobile\/manage-subscription\?token=*  url reject-img
+# YouTube去广告
+^https?:\/\/.+\.googlevideo\.com\/.+&oad url reject-img
+^https?:\/\/.+\.googlevideo\.com\/.+ctier url reject-img
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+ad_ url reject-img
+^https?:\/\/youtubei\.googleapis\.com\/youtubei\/.+log_ url reject-img
+^https?:\/\/.+\.youtube\.com\/get_midroll_ url reject-img
+^https?:\/\/premiumyva\.appspot\.com\/vmclickstoadvertisersite url reject-img
+^https?:\/\/.+\.youtube\.com\/api\/stats\/ads url reject-img
+^https?:\/\/.+\.youtube\.com\/api\/stats\/.+adformat url reject-img
+^https?:\/\/.+\.youtube\.com\/pagead\/ url reject-img
+^https?:\/\/.+\.youtube\.com\/ptracking url reject-img
+#elsarewrite 学英语
+^https:\/\/pool\.elsanow\.io\/content\/api\/v1\/modules\/download$  url request-header (\r\n)x-session-token:.+(\r\n) request-header $1x-session-token: F3S0w0bysBQFdbjtxpFurrFv2ItBBcBkVQxUddQW+9vjt2JXM751ksqq5GAWpkl+kk9nhig9BGh9JhYHQaokmendY6zLZDscHiRkZD2HrdJclKVCLordAARJhYIrf5C+5OSK6ax2TA45CKi8S09FEtYXN4noXO7gt42NT6WPIv6DKhdIwVxQuIAMLU5abmpMTDlyWeI4ulBWcOQbuZWWZg==
+#adguardpremium
+^https:\/\/mobile-api\.adguard\.com\/api\/1\.0\/ios_validate_receipt$ url 302 https://raw.githubusercontent.com/langkhach270389/Scripting/master/Adguard.rsp
+# 解锁B站大会员-圈X规则
+;https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url 302 http://api.bili.best:22333/geturl/
+;https:\/\/api.bilibili.com\/pgc\/view\/app\/season url 302 http://api.bili.best:22333/season/
+# 115离线 (请仔细阅读脚本内使用说明 By ikanam)
+^https:\/\/editorapi\.115\.com.* url 302 http://115.com/lx?taskdg=1
+#崩坏3 跨服 (By @FlintyLemming)
+^http:\/\/(\d*\.\d*\.\d*\.\d*)\/query_gameserver\?version=3\.7\.0_gf_ios&t=(\d*)&uid=(\d*) url 302 http://$1/query_gameserver?version=3.7.0_gf_android&t=$2&uid=$3
+^https:\/\/global1\.bh3\.com\/query_dispatch\?version=3\.7\.0_gf_ios&t=(\d*) url 302  https://global1.bh3.com/query_dispatch?version=3.7.0_gf_android&t=$1 
+# 第一弹 修复下载视频清晰度
+(http://musicapi\.diyidan\.net/tv_series/video/download/\d+)/(1|2) url 302 $1/4
+#boom
+^https:\/\/apimboom2\.globaldelight\.net\/itunesreceipt_v2\.php$ url 302 https://raw.githubusercontent.com/langkhach270389/Scripting/master/boom.vip.rsp
+#Bright
+^https:\/\/engbright\.com\/app-portal\/apple\/receipt$ url 302 https://raw.githubusercontent.com/langkhach270389/Scripting/master/Bright.rsp
+#ulysses
+^https:\/\/sk\.ulysses\.app\/api\/v1\/user_offers$ url request-header (\r\n)If-None-Match:.+(\r\n) request-header $1 
+#pre_dayone
+;^https:\/\/dayone\.me\/api\/users$ url request-header (\r\n)If-None-Match:.+(\r\n) request-header $1 
+#playerxtreme
+;^https:\/\/secure\.istreamer\.com\/backend$ url request-header (\r\n)If-None-Match:.+(\r\n) request-header $1 
