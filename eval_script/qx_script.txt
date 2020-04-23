@@ -22,7 +22,7 @@ https://app.bilibili.com/x/resource/show/tab\?access_key url script-response-bod
 
 https://app.bilibili.com/x/v2/feed/index\?access_key url script-response-body eval_script.js
 
-;https://app.bilibili.com/x/v2/account/mine\?access_key url script-response-body eval_script.js
+https://app.bilibili.com/x/v2/account/mine\?access_key url script-response-body eval_script.js
 
 https://app.bilibili.com/x/v2/view\?access_key url script-response-body eval_script.js
 
@@ -192,13 +192,13 @@ https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body
 
 ^https:\/\/api\.textnow\.me\/api2.0\/users\/.* url script-response-body eval_script.js
 
-;^https:\/\/app\.bilibili\.com\/(search\/resource|x\/(resource\/show\/tab|v2\/(view|rank|feed|reply\/main|account\/mine))) url script-response-body eval_script.js
+^https:\/\/app\.bilibili\.com\/(search\/resource|x\/(resource\/show\/tab|v2\/(view|rank|feed|reply\/main|account\/mine))) url script-response-body eval_script.js
 
-;^https:\/\/app\.bilibili\.com\/x\/v2\/space\?access_key url script-response-body eval_script.js
+^https:\/\/app\.bilibili\.com\/x\/v2\/space\?access_key url script-response-body eval_script.js
 
-;^https:\/\/api\.bilibili\.com\/pgc\/view\/app\/season url script-response-body eval_script.js
+^https:\/\/api\.bilibili\.com\/pgc\/view\/app\/season url script-response-body eval_script.js
 
-;^https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url script-response-body eval_script.js
+^https:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl url script-response-body eval_script.js
 
 ^https:\/\/vipapi\.jxedt\.com\/vip\/check url script-response-body eval_script.js
 
@@ -230,7 +230,7 @@ https:\/\/api\.lennou\.com\/user\/info url script-response-body eval_script.js
 
 https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info) url script-response-body eval_script.js
 
-;^https:\/\/p.+-buy\.itunes\.apple\.com\/WebObjects\/MZFinance.woa\/wa\/inAppRegrantPurchaseHistory url script-response-body eval_script.js
+^https:\/\/p.+-buy\.itunes\.apple\.com\/WebObjects\/MZFinance.woa\/wa\/inAppRegrantPurchaseHistory url script-response-body eval_script.js
 
 ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/theme)  url script-response-body   eval_script.js
 
@@ -314,9 +314,9 @@ http://user.shywck.com/user/userinfo url script-response-body eval_script.js
 
 ^https:\/\/bea\.sportq\.com\/SFitWeb\/sfit\/getUserBaseInfo url script-response-body eval_script.js
 
-;https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-request-header eval_script.js
+https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-request-header eval_script.js
 
-;https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-response-body eval_script.js
+https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php url script-response-body eval_script.js
 
 ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig) url script-response-body eval_script.js
 
