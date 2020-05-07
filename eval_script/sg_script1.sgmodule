@@ -38,7 +38,9 @@ eval_script.js = type=http-response,requires-body=1,pattern=^https?:\/\/vip1\.ku
 
 eval_script.js = type=http-response,requires-body=1,pattern=https:\/\/.*\.xiaoxiao.*\.com\/(vod\/reqplay\/|ucp/index|getGlobalData),script-path=eval_script.js
 
-eval_script.js = type=http-response,requires-body=1,pattern=^http(s)://mjapp.anlujia.com/index.php/app/ios/(vod/show|(user|vod|topic|type)/index),script-path=eval_script.js
+eval_script.js = type=http-response,requires-body=1,pattern=https:\/\/.*\/getGlobalData,script-path=eval_script.js
+
+eval_script.js = type=http-response,requires-body=1,pattern=^http(s)://api.bjxkhc.com/index.php/app/ios/(vod/show|(user|vod|topic|type)/index),script-path=eval_script.js
 
 eval_script.js = type=http-response,requires-body=1,pattern=^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json,script-path=eval_script.js
 
@@ -46,7 +48,7 @@ eval_script.js = type=http-response,requires-body=1,pattern=^https?:\/\/getuseri
 
 eval_script.js = type=http-response,requires-body=1,pattern=^https://getuserinfo-globalapi.zymk.cn/app_api/v5/(getuserinfo|coin_account|getuserinfo_ticket|getcomicinfo)/,script-path=eval_script.js
 
-eval_script.js = type=http-response,requires-body=1,pattern=^https?:\/\/api\.bilibili\.com\/pgc\/player\/api\/playurl,script-path=eval_script.js
+eval_script.js = type=http-response,requires-body=1,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),script-path=eval_script.js
 
 eval_script.js = type=http-response,requires-body=1,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/,script-path=eval_script.js
 
@@ -136,7 +138,7 @@ eval_script.js = type=http-response,requires-body=1,pattern=^https:\/\/photos\.a
 
 eval_script.js = type=http-response,requires-body=1,pattern=^https:\/\/license\.pdfexpert\.com\/api\/1\.0\/pdfexpert6\/subscription\/(refresh$|check$),script-path=eval_script.js
 
-eval_script.js = type=http-response,requires-body=1,pattern=^https:\/\/subs\.platforms\.team\/apple\/verifyTransaction$,script-path=eval_script.js
+eval_script.js = type=http-response,requires-body=1,pattern=^https:\/\/subs\.platforms\.team\/.+\/apple\/verify$,script-path=eval_script.js
 
 eval_script.js = type=http-response,requires-body=1,pattern=^https:\/\/apic\.musixmatch\.com\/ws\/.*\/config\.get,script-path=eval_script.js
 
